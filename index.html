@@ -3,10 +3,41 @@
 <head>
     <meta charset="utf-8">
     <title>はてなブログのシンタックスハイライトの色を変えるやつ</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"
+        crossorigin="anonymous">
+    <style>
+        section.main {
+            width: 960px;
+            margin: auto;
+            padding: 1px 48px;
+            background-color: white;
+            box-sizing: content-box;
+        }
+
+        section {
+            margin: 3em 0;
+        }
+
+        section header {
+            padding-top: 32px;
+            text-align: center;
+        }
+        section footer p {
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
-    <div id="app"></div>
+    <section class="main">
+        <header>
+            <h1>はてなシンタックスハイライト CSS ジェネレータ</h1>
+        </header>
+        <div id="app"></div>
+        <footer>
+            <p>@kawmra</p>
+        </footer>
+    </section>
     <script src="./dist/bundle.js"></script>
 </body>
 

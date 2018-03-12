@@ -1,5 +1,4 @@
 import path from 'path'
-import HtmlWebpackPlugin from 'html-webpack-plugin'
 
 const src = path.resolve(__dirname, 'src')
 const dist = path.resolve(__dirname, 'dist')
@@ -20,7 +19,11 @@ export default {
         test: /\.jsx$/,
         exclude: /node_modules/,
         loader: 'babel-loader'
-      }
+      },
+      {
+        test: /\.css$/,
+        loaders: ['style-loader', 'css-loader?modules'],
+      },
     ]
   },
 

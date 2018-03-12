@@ -1,0 +1,8 @@
+.preview {
+    margin: 0;
+    padding: 1em;
+    font-family: Ricty, Osaka-mono, "Osaka-等幅", "ＭＳ ゴシック", monospace;
+    font-size: 14px;
+    line-height: 1.5em;
+    flex-grow: 1;
+}

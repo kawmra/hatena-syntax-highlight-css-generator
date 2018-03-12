@@ -26,13 +26,25 @@ class App extends React.Component {
         this.state = {
             theme: props.theme
         }
+        this.saveTimer = 0
     }
 
     handleThemeChange(theme) {
-        repository.save(theme)
+        this.saveTheme(theme)
         this.setState({
             theme: theme
         })
+    }
+
+    saveTheme(theme) {
+        clearTimeout(this.saveTimer)
+        this.saveTimer = setTimeout(() => {
+            this.saveThemeActual(theme)
+        }, 1000)
+    }
+
+    saveThemeActual(theme) {
+        repository.save(theme)
     }
 
     render() {

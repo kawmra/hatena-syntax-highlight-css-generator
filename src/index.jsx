@@ -52,14 +52,17 @@ class App extends React.Component {
             <div>
                 {/* <Generator /> */}
                 <section>
-                    <h3>1. パレットの色を変更してプレビューを確認します</h3>
+                    <h2>色の設定</h2>
+                    <p>パレットの色を変更してすると、リアルタイムでプレビューとデザイン CSS が変更されます。</p>
+                    <p>パレットに入力した色は localStorage に保存されているため、ウィンドウを閉じてももう一度開くと復元されます。</p>
                     <div className={styles.container}>
                         <Preview theme={this.state.theme} />
                         <Palette defaultTheme={this.props.theme} onThemeChange={this.handleThemeChange.bind(this)} style={{flexGlow: 1}} />
                     </div>
                 </section>
                 <section>
-                    <h3>2. 以下の CSS を [デザイン → カスタマイズ → デザインCSS] に追記します</h3>
+                    <h2>デザインCSS</h2>
+                    <p>以下の CSS を [デザイン → カスタマイズ → デザインCSS] に追記すると、はてなブログのシンタックスハイライトの色が変更されます。</p>
                     <ThemeCssBox theme={this.state.theme} />
                 </section>
             </div>

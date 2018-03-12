@@ -5,8 +5,14 @@ export default class Palette extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            theme: props.defaultTheme
+            theme: props.theme
         }
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            theme: nextProps.theme
+        })
     }
 
     handleColorChange(name, color) {
@@ -19,7 +25,7 @@ export default class Palette extends React.Component {
     }
 
     renderPaletteRow(name) {
-        return <PaletteRow name={name} defaultValue={this.props.defaultTheme[name]} onColorChange={this.handleColorChange.bind(this)} />
+        return <PaletteRow name={name} value={this.state.theme[name]} onColorChange={this.handleColorChange.bind(this)} />
     }
 
     render() {
@@ -53,8 +59,14 @@ class PaletteRow extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            colorText: props.defaultValue
+            colorText: props.value
         }
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            colorText: nextProps.value
+        })
     }
 
     handleTextChange(e) {

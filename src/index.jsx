@@ -36,6 +36,20 @@ class App extends React.Component {
         })
     }
 
+    handleImportClick(e) {
+        const json = prompt("インポートする JSON を貼り付けてください")
+        const parsed = JSON.parse(json)
+        this.saveTheme(parsed)
+        this.setState({
+            theme: parsed
+        })
+    }
+
+    handleExportClick(e) {
+        const json = JSON.stringify(this.state.theme)
+        alert(`エクスポートしました: \n\n${json}`)
+    }
+
     saveTheme(theme) {
         clearTimeout(this.saveTimer)
         this.saveTimer = setTimeout(() => {
@@ -57,8 +71,13 @@ class App extends React.Component {
                     <p>パレットに入力した色は localStorage に保存されているため、ウィンドウを閉じてももう一度開くと復元されます。</p>
                     <div className={styles.container}>
                         <Preview theme={this.state.theme} />
-                        <Palette defaultTheme={this.props.theme} onThemeChange={this.handleThemeChange.bind(this)} style={{flexGlow: 1}} />
+                        <Palette theme={this.state.theme} onThemeChange={this.handleThemeChange.bind(this)} />
                     </div>
+                    <p>
+                        <button onClick={this.handleImportClick.bind(this)}>Import</button>
+                        &nbsp;
+                        <button onClick={this.handleExportClick.bind(this)}>Export</button>
+                    </p>
                 </section>
                 <section>
                     <h2>デザインCSS</h2>

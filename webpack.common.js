@@ -1,11 +1,8 @@
-import path from 'path'
+const path = require('path');
+const src = path.resolve(__dirname, 'src');
+const dist = path.resolve(__dirname, 'dist');
 
-const src = path.resolve(__dirname, 'src')
-const dist = path.resolve(__dirname, 'dist')
-
-export default {
-  mode: 'development',
-
+module.exports = {
   entry: src + '/index.jsx',
 
   output: {
@@ -30,7 +27,4 @@ export default {
   resolve: {
     extensions: ['.js', '.jsx']
   },
-
-  plugins: [
-  ]
 }

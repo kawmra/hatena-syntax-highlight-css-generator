@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "webpack --watch --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "deploy": "npm run build && ./deploy.sh"
   },
   "keywords": [],
   "author": "",
@@ -15,10 +17,12 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.10",
+    "gh-pages": "^1.1.0",
     "html-webpack-plugin": "^3.0.6",
     "style-loader": "^0.20.3",
     "webpack": "^4.1.1",
-    "webpack-cli": "^2.0.11"
+    "webpack-cli": "^2.0.11",
+    "webpack-merge": "^4.1.2"
   },
   "dependencies": {
     "react": "^16.2.0",

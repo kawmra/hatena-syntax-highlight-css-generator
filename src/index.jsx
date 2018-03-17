@@ -36,6 +36,7 @@ class App extends React.Component {
 
     handleExportClick(e) {
         const json = JSON.stringify(this.state.theme)
+        console.log(`Exported:\n${json}`)
         alert(`エクスポートしました: \n\n${json}`)
     }
 

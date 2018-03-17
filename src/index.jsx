@@ -6,18 +6,7 @@ import Palette from './Palette'
 import ThemeCssBox from './ThemeCssBox'
 import styles from './css/index.css'
 import repository from './ThemeRepository'
-
-const dracula = {
-    background: "#282a36",
-    color: "#ffffff",
-    synSpecial: "#c000c0",
-    synType: "#ff79c6",
-    synPreProc: "#a199c8",
-    synIdentifier: "#bd93f9",
-    synStatement: "#50fa7b",
-    synConstant: "#f1fa8c",
-    synComment: "#6272a4"
-}
+import themes from './Themes'
 
 class App extends React.Component {
 
@@ -91,4 +80,4 @@ class App extends React.Component {
 
 const savedTheme = repository.load()
 
-render(<App theme={savedTheme || dracula} />, document.getElementById('app'))
+render(<App theme={savedTheme || themes.dracula} />, document.getElementById('app'))

@@ -21,7 +21,8 @@ $ npm install
 - `build`    
     Webpack でプロダクションモードでビルドします。
 - `deploy`    
-    `build` してから `gh-pages` ブランチに必要なファイルをデプロイします。
+    `build` してから `gh-pages` ブランチに必要なファイルをデプロイします。    
+    デプロイするには、このレポジトリを fork した自分のレポジトリを clone している必要があります。
 
 # License
  

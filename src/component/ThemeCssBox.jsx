@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './css/theme_css_box.css'
+import styles from '../css/theme_css_box.css'
 
 export default class ThemeCssBox extends React.Component {
     render() {

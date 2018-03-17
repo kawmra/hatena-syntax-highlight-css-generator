@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './css/preview.css'
+import styles from '../css/preview.css'
 
 export default class Preview extends React.Component {
 

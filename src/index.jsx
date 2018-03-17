@@ -7,16 +7,16 @@ import ThemeCssBox from './ThemeCssBox'
 import styles from './css/index.css'
 import repository from './ThemeRepository'
 
-const azuki = {
-    background: '#353848',
-    color: '#ffffff',
-    synSpecial: '#c000c0',
-    synType: '#b3ce5b',
-    synPreProc: '#a199c8',
-    synIdentifier: '#afd0ef',
-    synStatement: '#ebc061',
-    synConstant: '#dd9cb4',
-    synComment: '#e8e6f3',
+const dracula = {
+    background: "#282a36",
+    color: "#ffffff",
+    synSpecial: "#c000c0",
+    synType: "#ff79c6",
+    synPreProc: "#a199c8",
+    synIdentifier: "#bd93f9",
+    synStatement: "#50fa7b",
+    synConstant: "#f1fa8c",
+    synComment: "#6272a4"
 }
 
 class App extends React.Component {
@@ -91,4 +91,4 @@ class App extends React.Component {
 
 const savedTheme = repository.load()
 
-render(<App theme={savedTheme || azuki} />, document.getElementById('app'))
+render(<App theme={savedTheme || dracula} />, document.getElementById('app'))

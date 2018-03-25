@@ -26,12 +26,20 @@ class App extends React.Component {
     }
 
     handleImportClick(e) {
-        const json = prompt("インポートする JSON を貼り付けてください")
-        const parsed = JSON.parse(json)
-        this.saveTheme(parsed)
-        this.setState({
-            theme: parsed
-        })
+        const json = prompt('インポートする JSON を貼り付けてください')
+        if (json === null || json === '') {
+            return
+        }
+        try {
+            const parsed = JSON.parse(json)
+            this.saveTheme(parsed)
+            this.setState({
+                theme: parsed
+            })
+        } catch (e) {
+            console.error(e)
+            alert('インポートした JSON を解析できませんでした')
+        }
     }
 
     handleExportClick(e) {

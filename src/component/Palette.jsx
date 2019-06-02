@@ -1,31 +1,8 @@
 import React from 'react';
 
 export default class Palette extends React.Component {
-
-    constructor(props) {
-        super(props)
-        this.state = {
-            theme: props.theme
-        }
-    }
-
-    componentWillReceiveProps(nextProps) {
-        this.setState({
-            theme: nextProps.theme
-        })
-    }
-
-    handleColorChange(name, color) {
-        const newTheme = this.state.theme
-        newTheme[name] = color
-        this.setState({
-            theme: newTheme
-        })
-        this.props.onThemeChange(newTheme)
-    }
-
     renderPaletteRow(name) {
-        return <PaletteRow name={name} value={this.state.theme[name]} onColorChange={this.handleColorChange.bind(this)} />
+        return <PaletteRow name={name} value={this.props.theme[name]} onColorChange={this.props.onThemeChange} />
     }
 
     render() {
@@ -55,24 +32,7 @@ export default class Palette extends React.Component {
 }
 
 class PaletteRow extends React.Component {
-
-    constructor(props) {
-        super(props)
-        this.state = {
-            colorText: props.value
-        }
-    }
-
-    componentWillReceiveProps(nextProps) {
-        this.setState({
-            colorText: nextProps.value
-        })
-    }
-
     handleTextChange(e) {
-        this.setState({
-            colorText: e.target.value
-        })
         this.props.onColorChange(this.props.name, e.target.value)
     }
 
@@ -80,12 +40,12 @@ class PaletteRow extends React.Component {
         return(
             <tr>
                 <td>{this.props.name}</td>
-                <td style={{ backgroundColor: this.state.colorText }}></td>
+                <td style={{ backgroundColor: this.props.value }}></td>
                 <td>
                     <input
                         type="text"
                         onChange={this.handleTextChange.bind(this)}
-                        value={this.state.colorText}
+                        value={this.props.value}
                         />
                 </td>
             </tr>

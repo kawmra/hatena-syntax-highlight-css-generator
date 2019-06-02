@@ -18,10 +18,13 @@ class App extends React.Component {
         this.saveTimer = 0
     }
 
-    handleThemeChange(theme) {
-        this.saveTheme(theme)
+    handleThemeChange(name, color) {
+        const newTheme = this.state.theme
+        newTheme[name] = color
+
+        this.saveTheme(newTheme)
         this.setState({
-            theme: theme
+            theme: newTheme
         })
     }
 
